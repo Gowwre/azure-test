@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace BusinessObjects.Entities;
@@ -21,7 +19,7 @@ public partial class SampleContext : DbContext
     public virtual DbSet<Subject> Subjects { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https: //go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer(GetConnectionStrings());
 
     private static string GetConnectionStrings()
@@ -38,16 +36,10 @@ public partial class SampleContext : DbContext
         }
         catch (Exception e)
         {
-            var config = new ConfigurationManager().AddEnvironmentVariables().Build();
-            
-            
-            var result =  config.GetSection("ConnectionStrings")["DefaultDB"];
-
-            if (string.IsNullOrEmpty(result)) throw new Exception("Connection String Is Null"); 
-            return result;
-            
+            throw new Exception(e.Message);
         }
     }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Account>(entity =>
