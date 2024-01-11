@@ -34,8 +34,9 @@ public partial class SampleContext : DbContext
 
         if (result == null)
         {
-            var configurationManager = new ConfigurationManager();
-            return configurationManager.GetConnectionString("DefaultDB");
+            IConfiguration appConfig = new ConfigurationManager()
+                ;
+            result = appConfig.GetConnectionString("DefaultDB");
         }
         
         return result;
