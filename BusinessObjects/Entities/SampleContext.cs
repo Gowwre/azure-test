@@ -28,7 +28,7 @@ public partial class SampleContext : DbContext
     {
         try
         {
-            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json")
+            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json", true, true)
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .Build();
 
@@ -38,10 +38,10 @@ public partial class SampleContext : DbContext
         }
         catch (Exception e)
         {
-            var config = new ConfigurationManager();
+            var config = new ConfigurationManager().AddEnvironmentVariables().Build();
             
             
-            var result =  config.GetSection("ConnectionStrings")["SQLAZURECONNSTR_DefaultDB"];
+            var result =  config.GetSection("ConnectionStrings")["DefaultDB"];
 
             if (result == null) throw new Exception("Connection String Is Null"); 
             return result;
