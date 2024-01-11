@@ -1,0 +1,15 @@
+D:\PRN231\AzureTest\Repositories\bin\Debug\net8.0\Repositories.deps.json
+D:\PRN231\AzureTest\Repositories\bin\Debug\net8.0\Repositories.dll
+D:\PRN231\AzureTest\Repositories\bin\Debug\net8.0\Repositories.pdb
+D:\PRN231\AzureTest\Repositories\bin\Debug\net8.0\BusinessObjects.dll
+D:\PRN231\AzureTest\Repositories\bin\Debug\net8.0\BusinessObjects.pdb
+D:\PRN231\AzureTest\Repositories\obj\Debug\net8.0\Repositories.csproj.AssemblyReference.cache
+D:\PRN231\AzureTest\Repositories\obj\Debug\net8.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\PRN231\AzureTest\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
+D:\PRN231\AzureTest\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
+D:\PRN231\AzureTest\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\PRN231\AzureTest\Repositories\obj\Debug\net8.0\Repositories.csproj.CopyComplete
+D:\PRN231\AzureTest\Repositories\obj\Debug\net8.0\Repositories.dll
+D:\PRN231\AzureTest\Repositories\obj\Debug\net8.0\refint\Repositories.dll
+D:\PRN231\AzureTest\Repositories\obj\Debug\net8.0\Repositories.pdb
+D:\PRN231\AzureTest\Repositories\obj\Debug\net8.0\ref\Repositories.dll
