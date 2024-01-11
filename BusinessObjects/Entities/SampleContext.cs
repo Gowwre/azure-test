@@ -39,7 +39,7 @@ public partial class SampleContext : DbContext
         catch (Exception e)
         {
             var config = new ConfigurationManager();
-            return config.GetConnectionString("DefaultDB");
+            return config["ConnectionStrings:DefaultDB"];
         }
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
