@@ -5,16 +5,16 @@ namespace Repositories;
 
 public class AccountRepository : IAccountRepository
 {
-   private readonly SampleContext _context;
+    private readonly SampleContext _context;
 
-   public AccountRepository()
-   {
-      _context = new SampleContext();
-   }
+    public AccountRepository()
+    {
+        _context = new SampleContext();
+    }
 
-   public Task<List<Subject>> GetSubjectsAsync()
-   {
-      var subjects = _context.Subjects.ToListAsync();
-      return subjects;
-   }
+    public Task<List<Subject>> GetSubjectsAsync()
+    {
+        var subjects = _context.Subjects.ToListAsync();
+        return subjects;
+    }
 }

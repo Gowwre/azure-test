@@ -11,8 +11,8 @@ builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-    app.UseSwagger();
-    app.UseSwaggerUI();
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
@@ -37,15 +37,15 @@ app.MapGet("/weatherforecast", () =>
     .WithOpenApi();
 
 app.MapGet("/subjects", async (IAccountRepository accountRepository) =>
-{
-    var subjects = await accountRepository.GetSubjectsAsync();
-    return subjects;
-}).WithName("GetSubjects")
-.WithOpenApi();
+    {
+        var subjects = await accountRepository.GetSubjectsAsync();
+        return subjects;
+    }).WithName("GetSubjects")
+    .WithOpenApi();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }

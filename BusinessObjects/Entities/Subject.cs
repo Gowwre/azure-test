@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace BusinessObjects.Entities;
 
-namespace BusinessObjects.Entities;
-
-public partial class Subject
+public class Subject
 {
     public string SubjectId { get; set; } = null!;
 

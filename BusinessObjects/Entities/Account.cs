@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace BusinessObjects.Entities;
 
-namespace BusinessObjects.Entities;
-
-public partial class Account
+public class Account
 {
     public string Email { get; set; } = null!;
 
