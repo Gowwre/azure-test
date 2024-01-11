@@ -29,7 +29,7 @@ public partial class SampleContext : DbContext
         try
         {
             var config = new ConfigurationBuilder().AddJsonFile("appsettings.json", true, true)
-                .SetBasePath(Directory.GetCurrentDirectory())
+                .SetBasePath(Directory.GetCurrentDirectory()).AddEnvironmentVariables()
                 .Build();
 
             var result = config.GetConnectionString("DefaultDB");
@@ -43,7 +43,7 @@ public partial class SampleContext : DbContext
             
             var result =  config.GetSection("ConnectionStrings")["DefaultDB"];
 
-            if (result == null) throw new Exception("Connection String Is Null"); 
+            if (string.IsNullOrEmpty(result)) throw new Exception("Connection String Is Null"); 
             return result;
             
         }
