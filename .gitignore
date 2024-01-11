@@ -990,3 +990,9 @@ tags
 
 # End of https://www.toptal.com/developers/gitignore/api/rider,visualstudio,visualstudiocode,csharp,dotnetcore,aspnetcore,node,java,vim
 
+Repositories/bin
+AzureTest/bin
+AzureTest/obj
+BusinessObjects/obj
+Repositories/obj
+AzureTest/appsettings.json
