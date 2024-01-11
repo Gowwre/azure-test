@@ -39,7 +39,13 @@ public partial class SampleContext : DbContext
         catch (Exception e)
         {
             var config = new ConfigurationManager();
-            return config["ConnectionStrings:DefaultDB"];
+            
+            
+            var result =  config.GetConnectionString("DefaultDB");
+
+            if (result == null) throw new Exception("Connection String Is Null"); 
+            return result;
+            
         }
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
