@@ -42,8 +42,9 @@ public partial class SampleContext : DbContext
             
             
             var result =  config.GetConnectionString("DefaultDB");
+            var stuff = config.GetSection("ConnectionStrings").Value;
 
-            if (result == null) throw new Exception("Connection String Is Null"); 
+            if (result == null) throw new Exception($"Connection String Is Null, {stuff}"); 
             return result;
             
         }
