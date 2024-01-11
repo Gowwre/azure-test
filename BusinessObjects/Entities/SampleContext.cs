@@ -41,10 +41,9 @@ public partial class SampleContext : DbContext
             var config = new ConfigurationManager();
             
             
-            var result =  config.GetConnectionString("DefaultDB");
-            var stuff = config.GetSection("ConnectionStrings").Value;
+            var result =  config.GetSection("ConnectionStrings")["SQLAZURECONNSTR_DefaultDB"];
 
-            if (result == null) throw new Exception($"Connection String Is Null, {stuff}"); 
+            if (result == null) throw new Exception("Connection String Is Null"); 
             return result;
             
         }
