@@ -26,18 +26,21 @@ public partial class SampleContext : DbContext
 
     private static string GetConnectionStrings()
     {
-        var config = new ConfigurationBuilder().AddJsonFile("appsettings.json")
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .Build();
-
-        var result = config.GetConnectionString("DefaultDB");
-
-        if (result == null)
+        try
         {
-            result = Environment.GetEnvironmentVariable("DefaultDB");
+            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json")
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .Build();
+
+            var result = config.GetConnectionString("DefaultDB");
+
+            return result;
         }
-        
-        return result;
+        catch (Exception e)
+        {
+            var config = new ConfigurationManager();
+            return config.GetConnectionString("DefaultDB");
+        }
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
