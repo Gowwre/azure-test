@@ -30,7 +30,15 @@ public partial class SampleContext : DbContext
             .SetBasePath(Directory.GetCurrentDirectory())
             .Build();
 
-        return config.GetConnectionString("DefaultDB");
+        var result = config.GetConnectionString("DefaultDB");
+
+        if (result == null)
+        {
+            var configurationManager = new ConfigurationManager();
+            return configurationManager.GetConnectionString("DefaultDB");
+        }
+        
+        return result;
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
