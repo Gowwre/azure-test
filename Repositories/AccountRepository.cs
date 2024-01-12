@@ -17,4 +17,11 @@ public class AccountRepository : IAccountRepository
         var subjects = _context.Subjects.ToListAsync();
         return subjects;
     }
+    
+    public Task<List<Account>> GetAccountsAsync()
+    {
+        var accounts = _context.Accounts.ToListAsync();
+        return accounts;
+    }
+    
 }
